@@ -3,18 +3,11 @@ import { buttons } from './keypadCalculator';
 import calculate from '../logic/calculate';
 import './Calculator.css';
 
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: '',
-      next: '',
-      operation: '',
-    };
-  }
+const Calculator = () => {
+  const [state, setState] = React.useState({});
 
-  pressButtonHandler = (event) => {
-    this.setState((prev) => {
+  const pressButtonHandler = React.useCallback((event) => {
+    setState((prev) => {
       try {
         const output = calculate(prev, event.target.value);
         return ({
@@ -25,10 +18,10 @@ class Calculator extends React.Component {
         return prev;
       }
     });
-  };
+  }, []);
 
-  calculatorStructure = () => {
-    const { total, next, operation } = this.state;
+  const calculatorStructure = () => {
+    const { total, next, operation } = state;
     const display = (total || '') + (operation || '') + (next || '');
     return (
       <div className="calculator">
@@ -46,7 +39,7 @@ class Calculator extends React.Component {
                 key={text}
                 type="button"
                 className={`keypad-button ${className} || ''`}
-                onClick={this.pressButtonHandler}
+                onClick={pressButtonHandler}
               >
                 {text}
               </button>
@@ -57,13 +50,14 @@ class Calculator extends React.Component {
     );
   };
 
-  render() {
-    return (
-      <div className="calculator-content">
-        <this.calculatorStructure />
-      </div>
-    );
-  }
-}
+  const calculator = calculatorStructure();
+  return calculator;
+};
 
-export default Calculator;
+const CalculatorRender = () => (
+  <div className="calculator-content">
+    <Calculator />
+  </div>
+);
+
+export default CalculatorRender;
