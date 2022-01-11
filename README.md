@@ -1,7 +1,9 @@
 # Math Magicians
 A calculator made using REACT as frontend technology. 
 
-
+| Desktop version | Mobile version|
+|-----------------|---------------|
+| ![Desktop_image](./readme_imgs/desktop_ver.png) | ![Mobile_Image](./readme_imgs/mobile_ver.png) |
 
 > "Math magicians" is a website for all fans of mathematics. It is builded using the Single Page App (SPA) structure that allows users to:
 
@@ -18,9 +20,7 @@ A calculator made using REACT as frontend technology.
 - React
 - Linters
 
-If you like, you can see a live demo of the site here:
-
-[Live Demo Link](https://theluisabarca.github.io/math-magicians/dist/)
+The Live Demo is not available yet.
 
 ## Getting Started
 
