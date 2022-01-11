@@ -17,12 +17,12 @@
 }
 
 .author {
-    font-size: 30px;
-    color: #212121;
-    font-family: "Lora", serif;
-    font-weight: bold;
-    font-style: italic;
-  }
+  font-size: 30px;
+  color: #212121;
+  font-family: "Lora", serif;
+  font-weight: bold;
+  font-style: italic;
+}
 
 .line {
   height: 4px;
