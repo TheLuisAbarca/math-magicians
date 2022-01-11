@@ -1,3 +1,77 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background-color: #ecf0f1;
+}
+
+body {
+  display: flex;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.active {
+  font-weight: bold;
+  color: #ff8a3d;
+}
+
+.welcomeTitle {
+  font-size: 48px;
+  color: black;
+}
+
+.appTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-style: hidden hidden dotted hidden;
+}
+
+.navbarLinks {
+  display: flex;
+  gap: 40px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.appContent {
+  padding: 16px 24px;
+  display: flex;
+  flex-grow: 1;
+}
+
+.appTopTitle {
+  color: #ff8a3d;
+}
+
+@media (max-width: 768px) {
+  .appTopTitle {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }

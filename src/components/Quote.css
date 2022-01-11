@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap");
+
+.quote-section {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 40px;
+  padding: 10%;
+  background-repeat: no-repeat;
+  background-size: 160px;
+}
+
+.quote {
+  font-size: 30px;
+  color: #212121;
+  font-family: "Lora", serif;
+}
+
+.author {
+    font-size: 30px;
+    color: #212121;
+    font-family: "Lora", serif;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+.line {
+  height: 4px;
+  background-color: #ff8a3d;
+  width: 30%;
+  align-self: center;
+}
