@@ -55,9 +55,12 @@ const Calculator = () => {
 };
 
 const CalculatorRender = () => (
-  <div className="calculator-content">
-    <Calculator />
-  </div>
+  <section className="calculator-section">
+    <h2 className="section-title">Let&apos;s do some math</h2>
+    <div className="calculator-content">
+      <Calculator />
+    </div>
+  </section>
 );
 
 export default CalculatorRender;

@@ -1,5 +1,13 @@
+.calculator-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
 .calculator-content {
-  width: 50%;
+  width: 70%;
 }
 
 .calculator-keypad {
@@ -43,4 +51,21 @@
 
 .bg-orange {
   background-color: #ff8a3d;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
+
+  .calculator-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
 }
