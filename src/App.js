@@ -1,11 +1,11 @@
 import {
-  Routes, NavLink, Route, HashRouter as MainRouter,
+  Routes, NavLink, Route, BrowserRouter as MainRouter,
 } from 'react-router-dom';
 import routes from './routes';
 import './App.css';
 
-/* const URL = process.env.PUBLIC_URL; */
-const URL = '/';
+const URL = process.env.PUBLIC_URL;
+/* const URL = '/'; */
 
 const TopBar = () => (
   <header className="appTopBar">
