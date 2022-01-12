@@ -1,5 +1,53 @@
 import calculate from './calculate';
 
+const obj = {
+  total: null,
+  next: null,
+  operation: null,
+}
+
+describe('Inserting values to calculate function.', () => {
+  test('Add number A to obj', () => {
+    let data = {};
+    expect(calculate(data, '1')).toEqual({
+      total: null,
+      next: '1',
+    })
+  });
+
+  test('Add operation key to obj', () => {
+    const tempObj = calculate(obj, '2');
+    expect(calculate(tempObj, '+')).toEqual({
+      total: '2',
+      next: null,
+      operation: '+',
+    });
+  });
+  
+  test('Add number B to obj', () => {
+    let tempObj = {};
+    tempObj = calculate(obj, '2');
+    tempObj = calculate(tempObj, '+');
+    tempObj = { ...tempObj, ...calculate(tempObj, '3')};
+    expect(tempObj).toEqual({
+      total: '2',
+      next: '3',
+      operation: '+',
+    });
+  });
+
+  test('Operation invalid with just one operand.', () => {
+    const invalidBinaryOperation = () => {
+      let data = {};
+      data = { ...data, ...calculate(data, '+') };
+      data = { ...data, ...calculate(data, '2') };
+      data = { ...data, ...calculate(data, '=') };
+      return data;
+    };
+    expect(() => invalidBinaryOperation()).toThrow('one.plus is not a function');
+  });
+});
+
 describe('Basic Operations', () => {
   test('Sum -> 3 + 3 = 6', () => {
     let data = {};
@@ -106,16 +154,5 @@ describe('Basic Operations', () => {
       next: null,
       operation: null,
     });
-  });
-
-  test('Operation invalid with just one operand.', () => {
-    const invalidBinaryOperation = () => {
-      let data = {};
-      data = { ...data, ...calculate(data, '+') };
-      data = { ...data, ...calculate(data, '2') };
-      data = { ...data, ...calculate(data, '=') };
-      return data;
-    };
-    expect(() => invalidBinaryOperation()).toThrow('one.plus is not a function');
   });
 });
