@@ -1,5 +1,28 @@
 import operate from './operate';
 
+describe('Operations not Valid to Operate.', () => {
+  test('Zero Division is not supported by big.js', () => {
+    const a = 9;
+    const b = 0;
+    const zeroDivision = () => operate(a, b, '÷');
+    expect(() => zeroDivision()).toThrow('[big.js] Division by zero');
+  });
+
+  test('Using "*" character instead of "x" for a multiplication is not supported', () => {
+    const a = 3;
+    const b = 1;
+    const notSupportedOp = () => operate(a, b, '*');
+    expect(() => notSupportedOp()).toThrow("Unknown operation '*'");
+  });
+
+  test('Using "/" character instead of "÷" for a division is not supported', () => {
+    const a = 6;
+    const b = 2;
+    const notSupportedOp = () => operate(a, b, '/');
+    expect(() => notSupportedOp()).toThrow("Unknown operation '/'");
+  });
+});
+
 describe('Basic Operations Supported', () => {
   test('3 + 3 = 6', () => {
     const a = 3;
@@ -48,28 +71,5 @@ describe('Basic Operations Supported', () => {
     const b = 2;
     const resp = operate(a, b, '%');
     expect(resp).toBe('1');
-  });
-});
-
-describe('Operations not Valid to Operate.', () => {
-  test('Zero Division is not supported by big.js', () => {
-    const a = 9;
-    const b = 0;
-    const zeroDivision = () => operate(a, b, '÷');
-    expect(() => zeroDivision()).toThrow('[big.js] Division by zero');
-  });
-
-  test('Using "*" character instead of "x" for a multiplication is not supported', () => {
-    const a = 3;
-    const b = 1;
-    const notSupportedOp = () => operate(a, b, '*');
-    expect(() => notSupportedOp()).toThrow("Unknown operation '*'");
-  });
-
-  test('Using "/" character instead of "÷" for a division is not supported', () => {
-    const a = 6;
-    const b = 2;
-    const notSupportedOp = () => operate(a, b, '/');
-    expect(() => notSupportedOp()).toThrow("Unknown operation '/'");
   });
 });
