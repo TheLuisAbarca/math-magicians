@@ -5,7 +5,6 @@ import routes from './routes';
 import './App.css';
 
 const URL = process.env.PUBLIC_URL;
-/* const URL = '/'; */
 
 const TopBar = () => (
   <header className="appTopBar">
