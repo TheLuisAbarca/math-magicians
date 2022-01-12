@@ -11,9 +11,6 @@ A calculator made using REACT as frontend technology.
     - Read a random math-related quote.
     - See a list of all the available operations.
 
-If you like, you can see a live demo of the site here:
-
-[Live Demo Link](https://theluisabarca.github.io/math-magicians/)  
 ## Built With
 
 - HTML5
@@ -23,7 +20,9 @@ If you like, you can see a live demo of the site here:
 - React
 - Linters
 
-The Live Demo is not available yet.
+If you like, you can see a live demo of the site here:
+
+[Live Demo Link](https://theluisabarca.github.io/math-magicians/)  
 
 ## Getting Started
 
