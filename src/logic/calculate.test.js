@@ -4,15 +4,15 @@ const obj = {
   total: null,
   next: null,
   operation: null,
-}
+};
 
 describe('Inserting values to calculate function.', () => {
   test('Add number A to obj', () => {
-    let data = {};
+    const data = {};
     expect(calculate(data, '1')).toEqual({
       total: null,
       next: '1',
-    })
+    });
   });
 
   test('Add operation key to obj', () => {
@@ -23,12 +23,12 @@ describe('Inserting values to calculate function.', () => {
       operation: '+',
     });
   });
-  
+
   test('Add number B to obj', () => {
     let tempObj = {};
     tempObj = calculate(obj, '2');
     tempObj = calculate(tempObj, '+');
-    tempObj = { ...tempObj, ...calculate(tempObj, '3')};
+    tempObj = { ...tempObj, ...calculate(tempObj, '3') };
     expect(tempObj).toEqual({
       total: '2',
       next: '3',
