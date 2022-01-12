@@ -3,7 +3,7 @@ import { buttons } from './keypadCalculator';
 import calculate from '../logic/calculate';
 import './Calculator.css';
 
-const Calculator = () => {
+export const Calculator = () => {
   const [state, setState] = React.useState({});
 
   const pressButtonHandler = React.useCallback((event) => {
